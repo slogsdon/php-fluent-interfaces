@@ -1,0 +1,20 @@
+language: php
+
+php:
+  - 5.3
+  - 5.4
+  - 5.5
+  - 5.6
+  - hhvm
+
+install:
+  - composer install
+
+script:
+  - php -d zend.enable_gc=0 vendor/bin/phpunit -c tests/phpunit.xml.dist --coverage-php build/coverage/coverage-{/.}.cov
+
+after_script:
+  # Merges the individual clover reports of each component into a single clover.xml
+  - php vendor/bin/phpcov.php --merge --clover build/logs/clover.xml --whitelist src build/coverage
+  - php vendor/bin/coveralls
+
