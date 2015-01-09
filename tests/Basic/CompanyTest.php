@@ -33,7 +33,7 @@ class CompanyTest extends PHPUnit_Framework_TestCase
                     ->setPostalCode(AddressTest::POSTAL_CODE)
             )
             ->withAddress(
-                $address1
+                $address2
                     ->setAddress1(AddressTest::ADDRESS_2)
                     ->setAddress2(AddressTest::ADDRESS_1)
                     ->setCity(AddressTest::CITY)
