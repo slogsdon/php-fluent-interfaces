@@ -27,7 +27,7 @@ class AddressTest extends PHPUnit_Framework_TestCase
 
     public function testCanSetupWithSetters()
     {
-        $address = (new Address())
+        $address = (new Address)
             ->setAddress1(self::ADDRESS_1)
             ->setAddress2(self::ADDRESS_2)
             ->setCity(self::CITY)
@@ -54,7 +54,7 @@ class AddressTest extends PHPUnit_Framework_TestCase
      */
     protected function expectedAddress()
     {
-        $address = new Address();
+        $address = new Address;
 
         $address->address1   = self::ADDRESS_1;
         $address->address2   = self::ADDRESS_2;
