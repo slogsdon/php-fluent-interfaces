@@ -4,8 +4,293 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fee5cd3c06b4f8904d69a306f721c884",
-    "packages": [],
+    "hash": "e3d2a31bd4a4c9c5b4a3c4026ee6bfad",
+    "packages": [
+        {
+            "name": "andrewsville/php-token-reflection",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Andrewsville/PHP-Token-Reflection.git",
+                "reference": "e6d0ac2baf66cdf154be34c3d2a2aa1bd4b426ee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Andrewsville/PHP-Token-Reflection/zipball/e6d0ac2baf66cdf154be34c3d2a2aa1bd4b426ee",
+                "reference": "e6d0ac2baf66cdf154be34c3d2a2aa1bd4b426ee",
+                "shasum": ""
+            },
+            "require": {
+                "ext-tokenizer": "*",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "TokenReflection": "./"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3"
+            ],
+            "authors": [
+                {
+                    "name": "Ondřej Nešpor",
+                    "homepage": "https://github.com/andrewsville"
+                },
+                {
+                    "name": "Jaroslav Hanslík",
+                    "homepage": "https://github.com/kukulich"
+                }
+            ],
+            "description": "Library emulating the PHP internal reflection using just the tokenized source code.",
+            "homepage": "http://andrewsville.github.com/PHP-Token-Reflection/",
+            "keywords": [
+                "library",
+                "reflection",
+                "tokenizer"
+            ],
+            "time": "2014-08-06 16:37:08"
+        },
+        {
+            "name": "doctrine/annotations",
+            "version": "v1.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/annotations.git",
+                "reference": "eeda578cbe24a170331a1cfdf78be723412df7a4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/eeda578cbe24a170331a1cfdf78be723412df7a4",
+                "reference": "eeda578cbe24a170331a1cfdf78be723412df7a4",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/lexer": "1.*",
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "doctrine/cache": "1.*",
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\Common\\Annotations\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "Docblock Annotations Parser",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "annotations",
+                "docblock",
+                "parser"
+            ],
+            "time": "2014-12-20 20:49:38"
+        },
+        {
+            "name": "doctrine/lexer",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/lexer.git",
+                "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/83893c552fd2045dd78aef794c31e694c37c0b8c",
+                "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\Common\\Lexer\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "Base library for a lexer that can be used in Top-Down, Recursive Descent Parsers.",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "lexer",
+                "parser"
+            ],
+            "time": "2014-09-09 13:34:57"
+        },
+        {
+            "name": "jakubledl/dissect",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jakubledl/dissect.git",
+                "reference": "d3a391de31e45a247e95cef6cf58a91c05af67c4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jakubledl/dissect/zipball/d3a391de31e45a247e95cef6cf58a91c05af67c4",
+                "reference": "d3a391de31e45a247e95cef6cf58a91c05af67c4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "symfony/console": "~2.1"
+            },
+            "suggest": {
+                "symfony/console": "for the command-line tool"
+            },
+            "bin": [
+                "bin/dissect.php",
+                "bin/dissect"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Dissect": [
+                        "src/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "unlicense"
+            ],
+            "authors": [
+                {
+                    "name": "Jakub Lédl",
+                    "email": "jakubledl@gmail.com"
+                }
+            ],
+            "description": "Lexing and parsing in pure PHP",
+            "homepage": "https://github.com/jakubledl/dissect",
+            "keywords": [
+                "ast",
+                "lexing",
+                "parser",
+                "parsing"
+            ],
+            "time": "2013-01-29 21:29:14"
+        },
+        {
+            "name": "lisachenko/go-aop-php",
+            "version": "0.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lisachenko/go-aop-php.git",
+                "reference": "52ea3b4b7fd06723c0170a9c89463b2e213cde43"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lisachenko/go-aop-php/zipball/52ea3b4b7fd06723c0170a9c89463b2e213cde43",
+                "reference": "52ea3b4b7fd06723c0170a9c89463b2e213cde43",
+                "shasum": ""
+            },
+            "require": {
+                "andrewsville/php-token-reflection": "~1.3",
+                "doctrine/annotations": "~1.0",
+                "jakubledl/dissect": "~1.0",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "symfony/console": "~2"
+            },
+            "suggest": {
+                "symfony/console": "for the command-line tool"
+            },
+            "bin": [
+                "bin/warmup"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Go": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lisachenko Alexander",
+                    "homepage": "https://github.com/lisachenko"
+                }
+            ],
+            "description": "Library for aspect-oriented programming in PHP.",
+            "homepage": "http://go.aopphp.com/",
+            "keywords": [
+                "aop",
+                "aspect",
+                "library",
+                "php"
+            ],
+            "time": "2014-07-08 11:34:22"
+        }
+    ],
     "packages-dev": [
         {
             "name": "cilex/cilex",
@@ -126,74 +411,6 @@
             "time": "2012-12-19 10:50:58"
         },
         {
-            "name": "doctrine/annotations",
-            "version": "v1.2.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/annotations.git",
-                "reference": "eeda578cbe24a170331a1cfdf78be723412df7a4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/eeda578cbe24a170331a1cfdf78be723412df7a4",
-                "reference": "eeda578cbe24a170331a1cfdf78be723412df7a4",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/lexer": "1.*",
-                "php": ">=5.3.2"
-            },
-            "require-dev": {
-                "doctrine/cache": "1.*",
-                "phpunit/phpunit": "4.*"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.3.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\Annotations\\": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com"
-                },
-                {
-                    "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com"
-                }
-            ],
-            "description": "Docblock Annotations Parser",
-            "homepage": "http://www.doctrine-project.org",
-            "keywords": [
-                "annotations",
-                "docblock",
-                "parser"
-            ],
-            "time": "2014-12-20 20:49:38"
-        },
-        {
             "name": "doctrine/instantiator",
             "version": "1.0.4",
             "source": {
@@ -246,60 +463,6 @@
                 "instantiate"
             ],
             "time": "2014-10-13 12:58:55"
-        },
-        {
-            "name": "doctrine/lexer",
-            "version": "v1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/lexer.git",
-                "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/lexer/zipball/83893c552fd2045dd78aef794c31e694c37c0b8c",
-                "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\Lexer\\": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
-                    "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com"
-                }
-            ],
-            "description": "Base library for a lexer that can be used in Top-Down, Recursive Descent Parsers.",
-            "homepage": "http://www.doctrine-project.org",
-            "keywords": [
-                "lexer",
-                "parser"
-            ],
-            "time": "2014-09-09 13:34:57"
         },
         {
             "name": "dompdf/dompdf",
@@ -3920,7 +4083,5 @@
     "platform": {
         "php": ">=5.3.0"
     },
-    "platform-dev": {
-        "ext-xdebug": "*"
-    }
+    "platform-dev": []
 }

@@ -1,25 +1,25 @@
 <?php
 
-namespace ABC\Basic;
+namespace ABC\AspectBuilder;
 
 use \Exception;
 
 /**
  * Exception to be thrown when a property that
  * doesn't exist attempts to be set using
- * \ABC\Basic\BaseAbstract::__call magic method.
+ * \ABC\AspectBuilder\BaseAbstract::__call magic method.
  */
 class UnknownPropertyException extends Exception
 {
     /**
-     * Instantiates new \ABC\Basic\UnknownPropertyException.
+     * Instantiates new \ABC\AspectBuilder\UnknownPropertyException.
      *
      * @param object     $obj
      * @param string     $property
      * @param int        $code
      * @param \Exception $inner
      *
-     * @return \ABC\Basic\UnknownPropertyException
+     * @return \ABC\AspectBuilder\UnknownPropertyException
      */
     public function __construct($obj, $property, $code = 0, Exception $inner = null)
     {

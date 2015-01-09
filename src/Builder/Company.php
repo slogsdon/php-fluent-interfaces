@@ -1,15 +1,15 @@
 <?php
 
-namespace ABC\Basic;
+namespace ABC\Builder;
 
-use \ABC\Basic\BaseAbstract;
-use \ABC\Basic\Address;
-use \ABC\Basic\Person;
+use \ABC\Builder\BaseAbstract;
+use \ABC\Builder\Address;
+use \ABC\Builder\Person;
 
 /**
- * @method \ABC\Basic\Company setName(string $name)
- * @method \ABC\Basic\Company setAddresses(array $addresses)
- * @method \ABC\Basic\Company setPeople(array $people)
+ * @method \ABC\Builder\Company setName(string $name)
+ * @method \ABC\Builder\Company setAddresses(array $addresses)
+ * @method \ABC\Builder\Company setPeople(array $people)
  */
 class Company extends BaseAbstract
 {
@@ -23,9 +23,9 @@ class Company extends BaseAbstract
     public $people    = array();
 
     /**
-     * @param \ABC\Basic\Address $address
+     * @param \ABC\Builder\Address $address
      *
-     * @return \ABC\Basic\Company
+     * @return \ABC\Builder\Company
      */
     public function withAddress(Address $address)
     {
@@ -34,9 +34,9 @@ class Company extends BaseAbstract
     }
 
     /**
-     * @param \ABC\Basic\Person $person
+     * @param \ABC\Builder\Person $person
      *
-     * @return \ABC\Basic\Company
+     * @return \ABC\Builder\Company
      */
     public function withPerson(Person $person)
     {

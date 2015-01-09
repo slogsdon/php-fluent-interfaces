@@ -1,15 +1,15 @@
 <?php
 
-namespace ABC\Basic;
+namespace ABC\AspectBuilder;
 
-use \ABC\Basic\BaseAbstract;
-use \ABC\Basic\Address;
-use \ABC\Basic\Person;
+use \ABC\AspectBuilder\BaseAbstract;
+use \ABC\AspectBuilder\Address;
+use \ABC\AspectBuilder\Person;
 
 /**
- * @method \ABC\Basic\Company setName(string $name)
- * @method \ABC\Basic\Company setAddresses(array $addresses)
- * @method \ABC\Basic\Company setPeople(array $people)
+ * @method \ABC\AspectBuilder\Company setName(string $name)
+ * @method \ABC\AspectBuilder\Company setAddresses(array $addresses)
+ * @method \ABC\AspectBuilder\Company setPeople(array $people)
  */
 class Company extends BaseAbstract
 {
@@ -23,9 +23,9 @@ class Company extends BaseAbstract
     public $people    = array();
 
     /**
-     * @param \ABC\Basic\Address $address
+     * @param \ABC\AspectBuilder\Address $address
      *
-     * @return \ABC\Basic\Company
+     * @return \ABC\AspectBuilder\Company
      */
     public function withAddress(Address $address)
     {
@@ -34,9 +34,9 @@ class Company extends BaseAbstract
     }
 
     /**
-     * @param \ABC\Basic\Person $person
+     * @param \ABC\AspectBuilder\Person $person
      *
-     * @return \ABC\Basic\Company
+     * @return \ABC\AspectBuilder\Company
      */
     public function withPerson(Person $person)
     {

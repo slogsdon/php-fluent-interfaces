@@ -2,14 +2,14 @@
 
 namespace ABC\Basic;
 
-use \ABC\Basic\Base;
+use \ABC\Basic\BaseAbstract;
 use \ABC\Basic\Address;
 
 /**
  * @method \ABC\Basic\Person setName(string $name)
  * @method \ABC\Basic\Person setAddress(\ABC\Basic\Address $address)
  */
-class Person extends Base
+class Person extends BaseAbstract
 {
     /** @var string|null */
     public $firstName = null;
@@ -20,4 +20,3 @@ class Person extends Base
     /** @var \ABC\Basic\Address|null */
     public $address   = null;
 }
-

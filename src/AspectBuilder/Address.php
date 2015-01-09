@@ -1,20 +1,20 @@
 <?php
 
-namespace ABC\Basic;
+namespace ABC\AspectBuilder;
 
-use \ABC\Basic\BaseAbstract;
+use \ABC\AspectBuilder\BaseAbstract;
 
 /**
  * Address
  *
  * Holds information for an entity's location.
  *
- * @method \ABC\Basic\Address setAddress1(string $address1)
- * @method \ABC\Basic\Address setAddress2(string $address2)
- * @method \ABC\Basic\Address setCity(string $city)
- * @method \ABC\Basic\Address setProvince(string $province)
- * @method \ABC\Basic\Address setCountry(string $country)
- * @method \ABC\Basic\Address setPostalCode(string $postalCode)
+ * @method \ABC\AspectBuilder\Address setAddress1(string $address1)
+ * @method \ABC\AspectBuilder\Address setAddress2(string $address2)
+ * @method \ABC\AspectBuilder\Address setCity(string $city)
+ * @method \ABC\AspectBuilder\Address setProvince(string $province)
+ * @method \ABC\AspectBuilder\Address setCountry(string $country)
+ * @method \ABC\AspectBuilder\Address setPostalCode(string $postalCode)
  */
 class Address extends BaseAbstract
 {

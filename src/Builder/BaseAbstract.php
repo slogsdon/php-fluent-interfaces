@@ -1,14 +1,14 @@
 <?php
 
-namespace ABC\Basic;
+namespace ABC\Builder;
 
-use \ABC\Basic\UnknownPropertyException;
+use \ABC\Builder\UnknownPropertyException;
 
 /**
  * Base class for basic Fluent Interfaces
  * for child classes.
  */
-abstract class Base
+abstract class BaseAbstract
 {
     /**
      * Allows for automatic setter functions
@@ -17,9 +17,9 @@ abstract class Base
      * @param string $name
      * @param array  $args
      *
-     * @throws \ABC\Basic\UnknownPropertyException
+     * @throws \ABC\Builder\UnknownPropertyException
      *
-     * @return \ABC\Basic\Base
+     * @return \ABC\Builder\BaseAbstract
      */
     public function __call($name, array $args)
     {
