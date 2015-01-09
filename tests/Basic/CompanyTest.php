@@ -16,31 +16,36 @@ class CompanyTest extends PHPUnit_Framework_TestCase
 
     public function testCanSetupWithSettersAndWithStatements()
     {
-        $company = (new Company())->
-            setName(self::NAME)->
-            withAddress(
-                (new Address())->
-                setAddress1(AddressTest::ADDRESS_1)->
-                setAddress2(AddressTest::ADDRESS_2)->
-                setCity(AddressTest::CITY)->
-                setProvince(AddressTest::PROVINCE)->
-                setCountry(AddressTest::COUNTRY)->
-                setPostalCode(AddressTest::POSTAL_CODE)
-            )->
-            withAddress(
-                (new Address())->
-                setAddress1(AddressTest::ADDRESS_2)->
-                setAddress2(AddressTest::ADDRESS_1)->
-                setCity(AddressTest::CITY)->
-                setProvince(AddressTest::PROVINCE)->
-                setCountry(AddressTest::COUNTRY)->
-                setPostalCode(AddressTest::POSTAL_CODE)
-            )->
-            withPerson(
-                (new Person())->
-                setFirstName(PersonTest::FIRST_NAME)->
-                setLastName(PersonTest::LAST_NAME)->
-                setAddress($this->expectedAddress1())
+        $company  = new Company();
+        $address1 = new Address();
+        $address2 = new Address();
+        $person   = new Person();
+
+        $company = $company
+            ->setName(self::NAME)
+            ->withAddress(
+                $address1
+                    ->setAddress1(AddressTest::ADDRESS_1)
+                    ->setAddress2(AddressTest::ADDRESS_2)
+                    ->setCity(AddressTest::CITY)
+                    ->setProvince(AddressTest::PROVINCE)
+                    ->setCountry(AddressTest::COUNTRY)
+                    ->setPostalCode(AddressTest::POSTAL_CODE)
+            )
+            ->withAddress(
+                $address1
+                    ->setAddress1(AddressTest::ADDRESS_2)
+                    ->setAddress2(AddressTest::ADDRESS_1)
+                    ->setCity(AddressTest::CITY)
+                    ->setProvince(AddressTest::PROVINCE)
+                    ->setCountry(AddressTest::COUNTRY)
+                    ->setPostalCode(AddressTest::POSTAL_CODE)
+            )
+            ->withPerson(
+                $person
+                    ->setFirstName(PersonTest::FIRST_NAME)
+                    ->setLastName(PersonTest::LAST_NAME)
+                    ->setAddress($this->expectedAddress1())
             );
 
         $this->assertEquals(self::NAME, $company->name);
@@ -51,12 +56,14 @@ class CompanyTest extends PHPUnit_Framework_TestCase
     /** @expectedException \ABC\Basic\UnknownPropertyException */
     public function testThrowsExceptionWithUnknownProperty()
     {
-        (new Company())->setNonExistent('');
+        $company = new Company();
+        $company->setNonExistent('');
     }
 
     public function testUnknownMethodReturnsFalse()
     {
-        $this->assertEquals(false, (new Company())->notAMethod());
+        $company = new Company();
+        $this->assertEquals(false, $company->notAMethod());
     }
 
     /**

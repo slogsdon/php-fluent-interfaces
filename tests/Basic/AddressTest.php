@@ -27,13 +27,14 @@ class AddressTest extends PHPUnit_Framework_TestCase
 
     public function testCanSetupWithSetters()
     {
-        $address = (new Address())->
-            setAddress1(self::ADDRESS_1)->
-            setAddress2(self::ADDRESS_2)->
-            setCity(self::CITY)->
-            setProvince(self::PROVINCE)->
-            setCountry(self::COUNTRY)->
-            setPostalCode(self::POSTAL_CODE);
+        $address = new Address();
+        $address = $address
+            ->setAddress1(self::ADDRESS_1)
+            ->setAddress2(self::ADDRESS_2)
+            ->setCity(self::CITY)
+            ->setProvince(self::PROVINCE)
+            ->setCountry(self::COUNTRY)
+            ->setPostalCode(self::POSTAL_CODE);
 
         $this->assertEquals(self::ADDRESS_1, $address->address1);
         $this->assertEquals(self::ADDRESS_2, $address->address2);
@@ -46,12 +47,14 @@ class AddressTest extends PHPUnit_Framework_TestCase
     /** @expectedException \ABC\Basic\UnknownPropertyException */
     public function testThrowsExceptionWithUnknownProperty()
     {
-        (new Address())->setNonExistent('');
+        $address = new Address();
+        $address->setNonExistent('');
     }
 
     public function testUnknownMethodReturnsFalse()
     {
-        $this->assertEquals(false, (new Address())->notAMethod());
+        $address = new Address();
+        $this->assertEquals(false, $address->notAMethod());
     }
 
     /**

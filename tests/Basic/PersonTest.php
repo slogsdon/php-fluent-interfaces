@@ -17,18 +17,20 @@ class PersonTest extends PHPUnit_Framework_TestCase
 
     public function testCanSetupWithSetters()
     {
-        $address = (new Address())->
-            setAddress1(AddressTest::ADDRESS_1)->
-            setAddress2(AddressTest::ADDRESS_2)->
-            setCity(AddressTest::CITY)->
-            setProvince(AddressTest::PROVINCE)->
-            setCountry(AddressTest::COUNTRY)->
-            setPostalCode(AddressTest::POSTAL_CODE);
+        $address = new Address();
+        $address = $address
+            ->setAddress1(AddressTest::ADDRESS_1)
+            ->setAddress2(AddressTest::ADDRESS_2)
+            ->setCity(AddressTest::CITY)
+            ->setProvince(AddressTest::PROVINCE)
+            ->setCountry(AddressTest::COUNTRY)
+            ->setPostalCode(AddressTest::POSTAL_CODE);
 
-        $person = (new Person())->
-            setFirstName(self::FIRST_NAME)->
-            setLastName(self::LAST_NAME)->
-            setAddress($address);
+        $person = new Person();
+        $person = $person
+            ->setFirstName(self::FIRST_NAME)
+            ->setLastName(self::LAST_NAME)
+            ->setAddress($address);
 
         $this->assertEquals(self::FIRST_NAME, $person->firstName);
         $this->assertEquals(self::LAST_NAME, $person->lastName);
@@ -38,12 +40,14 @@ class PersonTest extends PHPUnit_Framework_TestCase
     /** @expectedException \ABC\Basic\UnknownPropertyException */
     public function testThrowsExceptionWithUnknownProperty()
     {
-        (new Person())->setNonExistent('');
+        $person = new Person();
+        $person->setNonExistent('');
     }
 
     public function testUnknownMethodReturnsFalse()
     {
-        $this->assertEquals(false, (new Person())->notAMethod());
+        $person = new Person();
+        $this->assertEquals(false, $person->notAMethod());
     }
 
     /**
