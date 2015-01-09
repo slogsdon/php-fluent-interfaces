@@ -17,18 +17,18 @@ class PersonTest extends PHPUnit_Framework_TestCase
 
     public function testCanSetupWithSetters()
     {
-        $address = (new Address())
-            ->setAddress1(AddressTest::ADDRESS_1)
-            ->setAddress2(AddressTest::ADDRESS_2)
-            ->setCity(AddressTest::CITY)
-            ->setProvince(AddressTest::PROVINCE)
-            ->setCountry(AddressTest::COUNTRY)
-            ->setPostalCode(AddressTest::POSTAL_CODE);
+        $address = (new Address())->
+            setAddress1(AddressTest::ADDRESS_1)->
+            setAddress2(AddressTest::ADDRESS_2)->
+            setCity(AddressTest::CITY)->
+            setProvince(AddressTest::PROVINCE)->
+            setCountry(AddressTest::COUNTRY)->
+            setPostalCode(AddressTest::POSTAL_CODE);
 
-        $person = (new Person())
-            ->setFirstName(self::FIRST_NAME)
-            ->setLastName(self::LAST_NAME)
-            ->setAddress($address);
+        $person = (new Person())->
+            setFirstName(self::FIRST_NAME)->
+            setLastName(self::LAST_NAME)->
+            setAddress($address);
 
         $this->assertEquals(self::FIRST_NAME, $person->firstName);
         $this->assertEquals(self::LAST_NAME, $person->lastName);

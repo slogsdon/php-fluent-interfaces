@@ -27,13 +27,13 @@ class AddressTest extends PHPUnit_Framework_TestCase
 
     public function testCanSetupWithSetters()
     {
-        $address = (new Address())
-            ->setAddress1(self::ADDRESS_1)
-            ->setAddress2(self::ADDRESS_2)
-            ->setCity(self::CITY)
-            ->setProvince(self::PROVINCE)
-            ->setCountry(self::COUNTRY)
-            ->setPostalCode(self::POSTAL_CODE);
+        $address = (new Address())->
+            setAddress1(self::ADDRESS_1)->
+            setAddress2(self::ADDRESS_2)->
+            setCity(self::CITY)->
+            setProvince(self::PROVINCE)->
+            setCountry(self::COUNTRY)->
+            setPostalCode(self::POSTAL_CODE);
 
         $this->assertEquals(self::ADDRESS_1, $address->address1);
         $this->assertEquals(self::ADDRESS_2, $address->address2);

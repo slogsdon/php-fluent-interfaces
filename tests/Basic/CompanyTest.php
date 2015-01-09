@@ -16,31 +16,31 @@ class CompanyTest extends PHPUnit_Framework_TestCase
 
     public function testCanSetupWithSettersAndWithStatements()
     {
-        $company = (new Company())
-            ->setName(self::NAME)
-            ->withAddress(
-                (new Address())
-                    ->setAddress1(AddressTest::ADDRESS_1)
-                    ->setAddress2(AddressTest::ADDRESS_2)
-                    ->setCity(AddressTest::CITY)
-                    ->setProvince(AddressTest::PROVINCE)
-                    ->setCountry(AddressTest::COUNTRY)
-                    ->setPostalCode(AddressTest::POSTAL_CODE)
-            )
-            ->withAddress(
-                (new Address())
-                    ->setAddress1(AddressTest::ADDRESS_2)
-                    ->setAddress2(AddressTest::ADDRESS_1)
-                    ->setCity(AddressTest::CITY)
-                    ->setProvince(AddressTest::PROVINCE)
-                    ->setCountry(AddressTest::COUNTRY)
-                    ->setPostalCode(AddressTest::POSTAL_CODE)
-            )
-            ->withPerson(
-                (new Person())
-                    ->setFirstName(PersonTest::FIRST_NAME)
-                    ->setLastName(PersonTest::LAST_NAME)
-                    ->setAddress($this->expectedAddress1())
+        $company = (new Company())->
+            setName(self::NAME)->
+            withAddress(
+                (new Address())->
+                setAddress1(AddressTest::ADDRESS_1)->
+                setAddress2(AddressTest::ADDRESS_2)->
+                setCity(AddressTest::CITY)->
+                setProvince(AddressTest::PROVINCE)->
+                setCountry(AddressTest::COUNTRY)->
+                setPostalCode(AddressTest::POSTAL_CODE)
+            )->
+            withAddress(
+                (new Address())->
+                setAddress1(AddressTest::ADDRESS_2)->
+                setAddress2(AddressTest::ADDRESS_1)->
+                setCity(AddressTest::CITY)->
+                setProvince(AddressTest::PROVINCE)->
+                setCountry(AddressTest::COUNTRY)->
+                setPostalCode(AddressTest::POSTAL_CODE)
+            )->
+            withPerson(
+                (new Person())->
+                setFirstName(PersonTest::FIRST_NAME)->
+                setLastName(PersonTest::LAST_NAME)->
+                setAddress($this->expectedAddress1())
             );
 
         $this->assertEquals(self::NAME, $company->name);
