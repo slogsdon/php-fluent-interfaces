@@ -64,7 +64,7 @@ class CompanyBuilderTest extends PHPUnit_Framework_TestCase
         $builder = new CompanyBuilder($this->expectedCompany());
         $xml = $builder->asXml();
 
-        $this->assertEquals($this->expectedXml(), $xml);
+        $this->assertXmlStringEqualsXmlString($this->expectedXml(), $xml);
     }
 
     /** @var \ABC\Builder\Company */
