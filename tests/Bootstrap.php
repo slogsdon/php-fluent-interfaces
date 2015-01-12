@@ -10,6 +10,6 @@ require_once __DIR__ . '/../vendor/autoload.php';
  */
 // $applicationAspectKernel = \ABC\AspectBuilder\ApplicationAspectKernel::getInstance();
 // $applicationAspectKernel->init(array(
-//     // 'debug' => true,
+//     'debug' => true,
 //     'cacheDir' => __DIR__ . '/tmp/cache/aop',
 // ));

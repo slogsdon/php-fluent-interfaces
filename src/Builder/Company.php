@@ -3,8 +3,6 @@
 namespace ABC\Builder;
 
 use \ABC\Builder\BaseAbstract;
-use \ABC\Builder\Address;
-use \ABC\Builder\Person;
 
 /**
  * @method \ABC\Builder\Company setName(string $name)
@@ -27,7 +25,7 @@ class Company extends BaseAbstract
      *
      * @return \ABC\Builder\Company
      */
-    public function withAddress(Address $address)
+    public function appendAddress(Address $address)
     {
         $this->addresses[] = $address;
         return $this;
@@ -38,7 +36,7 @@ class Company extends BaseAbstract
      *
      * @return \ABC\Builder\Company
      */
-    public function withPerson(Person $person)
+    public function appendPerson(Person $person)
     {
         $this->people[] = $person;
         return $this;

@@ -10,25 +10,25 @@ use \ABC\AspectBuilder\BaseAbstract;
 
 class FluentAspect implements Aspect
 {
-    /**
-     * @Around("within(BaseAbstract+) && execution(public **->__call(*))")
-     *
-     * @param MethodInvocation $invocation
-     *
-     * @return mixed|null|object
-     */
-    protected function aroundMethodExecution(MethodInvocation $invocation)
-    {
-        $args = $invocation->getArguments();
-        switch (true) {
-            case substr($args[0], 0, 3) === 'set':
-                return $this->aroundSetMethodExecution($invocation);
-                break;
-            case substr($args[0], 0, 8) === 'validate':
-                return $this->aroundValidateMethodExecution($invocation);
-                break;
-        }
-    }
+    // /**
+    //  * @Around("within(BaseAbstract+) && execution(public **->__call(*))")
+    //  *
+    //  * @param MethodInvocation $invocation
+    //  *
+    //  * @return mixed|null|object
+    //  */
+    // protected function aroundMethodExecution(MethodInvocation $invocation)
+    // {
+    //     $args = $invocation->getArguments();
+    //     switch (true) {
+    //         case substr($args[0], 0, 3) === 'set':
+    //             return $this->aroundSetMethodExecution($invocation);
+    //             break;
+    //         case substr($args[0], 0, 8) === 'validate':
+    //             return $this->aroundValidateMethodExecution($invocation);
+    //             break;
+    //     }
+    // }
 
     /**
      * Before("dynamic(public ABC\AspectBuilder\BaseAbstract->set*(*))")

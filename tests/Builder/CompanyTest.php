@@ -23,7 +23,7 @@ class CompanyTest extends PHPUnit_Framework_TestCase
 
         $company = $company
             ->setName(self::NAME)
-            ->withAddress(
+            ->appendAddress(
                 $address1
                     ->setAddress1(AddressTest::ADDRESS_1)
                     ->setAddress2(AddressTest::ADDRESS_2)
@@ -32,7 +32,7 @@ class CompanyTest extends PHPUnit_Framework_TestCase
                     ->setCountry(AddressTest::COUNTRY)
                     ->setPostalCode(AddressTest::POSTAL_CODE)
             )
-            ->withAddress(
+            ->appendAddress(
                 $address2
                     ->setAddress1(AddressTest::ADDRESS_2)
                     ->setAddress2(AddressTest::ADDRESS_1)
@@ -41,7 +41,7 @@ class CompanyTest extends PHPUnit_Framework_TestCase
                     ->setCountry(AddressTest::COUNTRY)
                     ->setPostalCode(AddressTest::POSTAL_CODE)
             )
-            ->withPerson(
+            ->appendPerson(
                 $person
                     ->setFirstName(PersonTest::FIRST_NAME)
                     ->setLastName(PersonTest::LAST_NAME)

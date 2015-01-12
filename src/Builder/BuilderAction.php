@@ -5,8 +5,17 @@ namespace ABC\Builder;
 class BuilderAction
 {
     /** @var callable|null */
-    public $action = null;
+    public $action    = null;
 
     /** @var string|null */
-    public $name = null;
+    public $name      = null;
+
+    /** @var array */
+    public $arguments = null;
+
+    public function __construct($name = null, $action = null)
+    {
+        $this->name = $name;
+        $this->action = $action;
+    }
 }
