@@ -14,7 +14,7 @@ class PersonBuilderTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals($this->expectedPerson(), $builder->person);
 
-        $builder = $builder->executeActions();
+        $builder = $builder->execute();
 
         $this->assertEquals($this->expectedPerson(), $builder->person);
     }
@@ -23,7 +23,7 @@ class PersonBuilderTest extends PHPUnit_Framework_TestCase
     {
         $builder = new PersonBuilder();
 
-        $builder = $builder->executeActions();
+        $builder = $builder->execute();
 
         $this->assertEquals(new Person(), $builder->person);
     }

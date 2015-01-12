@@ -14,7 +14,7 @@ class AddressBuilderTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals($this->expectedAddress(), $builder->address);
 
-        $builder = $builder->executeActions();
+        $builder = $builder->execute();
 
         $this->assertEquals($this->expectedAddress(), $builder->address);
     }
@@ -23,7 +23,7 @@ class AddressBuilderTest extends PHPUnit_Framework_TestCase
     {
         $builder = new AddressBuilder();
 
-        $builder = $builder->executeActions();
+        $builder = $builder->execute();
 
         $this->assertEquals(new Address(), $builder->address);
     }

@@ -10,17 +10,20 @@ use \DOMDocument;
 
 class CompanyBuilder extends BuilderAbstract
 {
+    /** @var \ABC\Builder\Company */
     public $company      = null;
 
-    public function __construct($company = null)
+    public function __construct()
     {
-        if ($company != null) {
-            $this->company = $company;
-        } else {
-            $this->company = new Company();
-        }
+        $this->company = new Company();
+        $this->setUpValidations();
     }
 
+    /**
+     * @param \ABC\Builder\Address $address
+     *
+     * @return \ABC\Builder\Company
+     */
     public function withAddress(Address $address)
     {
         $action = new CompanyBuilderAction('withAddress', array($this->company, 'appendAddress'));
@@ -29,6 +32,11 @@ class CompanyBuilder extends BuilderAbstract
         return $this;
     }
 
+    /**
+     * @param \ABC\Builder\Person $person
+     *
+     * @return \ABC\Builder\Company
+     */
     public function withPerson(Person $person)
     {
         $action = new CompanyBuilderAction('withPerson', array($this->company, 'appendPerson'));
@@ -37,13 +45,34 @@ class CompanyBuilder extends BuilderAbstract
         return $this;
     }
 
+    /**
+     * Returns executed object as JSON.
+     * Throws an exception when builder actions
+     * have not been executed.
+     *
+     * @throws \Exception
+     *
+     * @return string
+     */
     public function asJson()
     {
+        $this->checkStatus();
         return json_encode($this->company);
     }
 
+    /**
+     * Returns executed object as XML.
+     * Throws an exception when builder actions
+     * have not been executed.
+     *
+     * @throws \Exception
+     *
+     * @return string
+     */
     public function asXml()
     {
+        $this->checkStatus();
+
         $xml = new DOMDocument('1.0', 'utf-8');
         $company = $xml->createElement('Company');
 
@@ -74,5 +103,41 @@ class CompanyBuilder extends BuilderAbstract
         $xml->appendChild($company);
 
         return $xml->saveXml();
+    }
+
+    /**
+     * Ensures there is at least one address.
+     *
+     * @param arraay $actionCounts
+     *
+     * @return bool
+     */
+    public function atLeastOneAddress($actionCounts)
+    {
+        return isset($actionCounts['withAddress']) && $actionCounts['withAddress'] > 0;
+    }
+
+    /**
+     * Ensures there is at least one person.
+     *
+     * @param arraay $actionCounts
+     *
+     * @return bool
+     */
+    public function atLeastOnePerson($actionCounts)
+    {
+        return isset($actionCounts['withPerson']) && $actionCounts['withPerson'] > 0;
+    }
+
+    /**
+     * Setups up validations for building Company objects.
+     *
+     * @return null
+     */
+    private function setUpValidations()
+    {
+        $this
+            ->addValidation(array($this, 'atLeastOneAddress'), 'Exception', 'Company needs at least one address')
+            ->addValidation(array($this, 'atLeastOnePerson'), 'Exception', 'Company needs at least one person');
     }
 }
